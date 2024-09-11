@@ -1,0 +1,91 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    display: grid;
+    grid-template-areas: 
+    "side side header header header header header"
+    "side side box box box box box"
+    "side side box box box box box"
+    "side side box box box box box"
+    "side side box box box box box"
+    ;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.side-panel {
+    grid-area: side;
+    background-color: #1992d4;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+}
+
+.side-panel .settings, .navlinks {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.side-panel div a i{
+    padding-right: 10px;
+}
+.side-panel div a {
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.project-container {
+    grid-area: box;
+    background-color: #E2E8F0;
+}
+
+.icon {
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    flex-wrap: wrap;
+    color: white;
+    margin-left: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .side-panel div a i{
+        padding-right: 0px;
+    }
+
+    .icon, .navlinks a, .settings a{
+        width: 100%;
+        font-size: 1rem !important;
+        margin-left: 0px !important;
+        flex-wrap: wrap; 
+        font-weight: normal !important;
+    }
+
+    
+}
